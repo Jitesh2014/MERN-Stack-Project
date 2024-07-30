@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(
     cors({
-        origin: ["https://dashboard-two-drab.vercel.app/","https://zerodhclone.vercel.app/"],
+        origin: ["https://dashboard-two-drab.vercel.app","https://zerodhclone.vercel.app"],
         methods: ["GET", "POST", "UPDATE", "DELETE"],
         credentials: true
     })
