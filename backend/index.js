@@ -25,10 +25,11 @@ mogoose.connect(process.env.MONGO_URL)
 app.use(cookieParser());
 app.use(express.json());
 app.use(
-	cors({
-		origin:"*",
-		credentials:true,
-	})
+    cors({
+        origin: ["https://dashboard-two-drab.vercel.app","https://zerodhclone.vercel.app"],
+        methods: ["GET", "POST", "UPDATE", "DELETE"],
+        credentials: true
+    })
 )
 
 
