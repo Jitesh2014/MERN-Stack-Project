@@ -37,7 +37,7 @@ function SignupForm() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",
+        "https://mern-stack-project-hyv5.onrender.com/signup",
         {
           ...inputValue,
         },
