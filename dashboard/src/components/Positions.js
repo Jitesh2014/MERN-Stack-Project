@@ -7,7 +7,7 @@ const Positions = () => {
   const[allPositon, setAllPositions]=useState([])
 
     useEffect(()=>{
-       axios.get("http://localhost:4000/getposition").then((res)=>{
+       axios.get("https://mern-stack-project-hyv5.onrender.com/getposition").then((res)=>{
         // console.log(res.data.data)
          setAllPositions(res.data.data)
        })

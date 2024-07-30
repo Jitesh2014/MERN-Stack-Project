@@ -8,7 +8,7 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/getholdings").then((res) => {
+    axios.get("https://mern-stack-project-hyv5.onrender.com/getholdings").then((res) => {
       // console.log(res.data);
       setAllHoldings(res.data.data);
     });
