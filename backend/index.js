@@ -108,9 +108,9 @@ app.get("/getposition", async (req, res) => {
 
 app.use("/",authRoute)
 
-// app.get("/", (req, res) => {
-//     res.send("Server Working Fine !")
-// })
+app.get("/home", (req, res) => {
+    res.send("Server Working Fine !")
+})
 
 app.listen(PORT, () => {
     console.log(`Server started at PORT ${PORT}`)
