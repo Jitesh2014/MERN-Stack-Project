@@ -11,9 +11,9 @@ const Welcome = () => {
   const [username, setUsername] = useState("");
   useEffect(() => {
     const verifyCookie = async () => {
-      // if (!cookies.token) {
-      //   navigate("/login");
-      // }
+      if (!cookies.token) {
+        navigate("/login");
+      }
       const { data } = await axios.post(
         "https://mern-stack-project-hyv5.onrender.com/auth",
         {},
