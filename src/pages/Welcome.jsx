@@ -12,22 +12,22 @@ const Welcome = () => {
   const [username, setUsername] = useState("");
   useEffect(() => {
     const verifyCookie = async () => {
-      if (!cookies.token) {
-        navigate("/login");
-      }
+      // if (!cookies.token) {
+      //   navigate("/login");
+      // }
       const { data } = await axios.post(
-        "http://localhost:4000/auth",
+        "https://mern-stack-project-hyv5.onrender.com/auth",
 
         {},
         { withCredentials: true }
       );
-      const { status, user } = data;
-      setUsername(user);
-      return status
-        ? toast(`Hello ${user}`, {
-            position: "top-right",
-          })
-        :(navigate("/login"));
+      // const { status, user } = data;
+      // setUsername(user);
+      // return status
+      //   ? toast(`Hello ${user}`, {
+      //       position: "top-right",
+      //     })
+      //   :(navigate("/login"));
     };
     verifyCookie();
   }, [cookies, navigate, removeCookie]);
