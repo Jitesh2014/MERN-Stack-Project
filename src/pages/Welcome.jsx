@@ -15,7 +15,7 @@ const Welcome = () => {
       //   navigate("/login");
       // }
       const { data } = await axios.post(
-        "https://mern-stack-project-hyv5.onrender.com",
+        "https://mern-stack-project-hyv5.onrender.com/auth",
         {},
         { withCredentials: true }
       );

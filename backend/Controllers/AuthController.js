@@ -1,12 +1,8 @@
 const User = require("../Models/UserModal")
-// const { createSecretToken } = require("../util/SecretToken")
+const { createSecretToken } = require("../util/SecretToken")
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 
-
-const createSecretToken = (userId) => {
-    return jwt.sign({ id: userId }, process.env.TOKEN_KEY, { expiresIn: "1h" });
-  };
 
 exports.Signup = async (req, res) => {
     try {
@@ -57,9 +53,7 @@ exports.Signup = async (req, res) => {
   
       res.cookie("token", token, {
         withCredentials: true,
-        httpOnly: true,  // Set to true
-        secure: process.env.NODE_ENV === 'production',  // Use secure cookies in production
-        sameSite: 'strict',
+        httpOnly: false, 
       });
   
       res.status(200).json({ message: "User logged in successfully", success: true });
