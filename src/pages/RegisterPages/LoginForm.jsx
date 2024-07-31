@@ -38,7 +38,7 @@ function LoginForm() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://mern-stack-project-hyv5.onrender.com/auth/login",
+        "https://mern-stack-project-hyv5.onrender.com/login",
         {
           ...inputValue,
         },
