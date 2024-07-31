@@ -5,6 +5,7 @@ import axios from "axios";
 import { FaArrowRight } from "react-icons/fa6";
 import { toast } from "react-hot-toast";
 
+        // "https://mern-stack-project-hyv5.onrender.com/auth",
 const Welcome = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
@@ -15,7 +16,8 @@ const Welcome = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "https://mern-stack-project-hyv5.onrender.com/auth",
+        "http://localhost:4000/auth",
+
         {},
         { withCredentials: true }
       );
@@ -25,14 +27,13 @@ const Welcome = () => {
         ? toast(`Hello ${user}`, {
             position: "top-right",
           })
-        : (removeCookie("token"), navigate("/login"));
+        :(navigate("/login"));
     };
     verifyCookie();
-  }, [cookies, navigate]);
+  }, [cookies, navigate, removeCookie]);
   const Logout = () => {
     removeCookie("token");
-    toast.success("Logout Successfully");
-    navigate("/login");
+    navigate("/signup");
   };
 
   return (
