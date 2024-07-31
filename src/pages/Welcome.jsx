@@ -28,7 +28,7 @@ const Welcome = () => {
         : (removeCookie("token"), navigate("/login"));
     };
     verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+  }, [cookies, navigate]);
   const Logout = () => {
     removeCookie("token");
     toast.success("Logout Successfully");
