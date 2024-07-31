@@ -15,7 +15,7 @@ const Welcome = () => {
       //   navigate("/login");
       // }
       const { data } = await axios.post(
-        "http://localhost:4000/",
+        "https://mern-stack-project-hyv5.onrender.com",
         {},
         { withCredentials: true }
       );
@@ -42,7 +42,7 @@ const Welcome = () => {
       </h1>
       <div className="flex justify-center gap-6 items-center ">
         <div className=" flex justify-center items-center gap-3 py-2 px-5 bg-blue-500 text-white font-semibold rounded-sm hover:bg-black transition-all duration-200">
-          <a href="https://dashboard-two-drab.vercel.app/" className="inline-flex">
+          <a href="https://dashboard-two-drab.vercel.app" className="inline-flex">
             Go To Dashboard
           </a>
           <FaArrowRight/>
